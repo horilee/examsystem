@@ -1,0 +1,9 @@
+{% extends 'data/base.html' %}
+{%block content%}
+{%if perms.data.add_choicequestion%}
+	<h1>Add A New Exam</h1>
+	{% include 'data/CommonForm.html' %}
+{%else%}
+	only teacher permits
+{%endif%}
+{%endblock%}
