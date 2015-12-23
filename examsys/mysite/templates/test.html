@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+{%for question in questions%}
+	<p>{{question.Qmain}}  {{question.ans}}</p>
+	{%empty%}
+	<p>null question belong to this point</p>
+{%endfor%}
+</body>
+</html>

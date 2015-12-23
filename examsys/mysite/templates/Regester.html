@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+{%if studentregester%}
+学生注册
+{%elif teacherregester%}
+教师注册
+{%endif%}
+</title>
+</head>
+
+<body>
+<h1>自动出题系统V1.0</h1>
+{%if student%}
+  <p>姓名：{{student.name}}</p>
+  <p>学号：{{student.num}}</p>
+  <p>学院：{{student.college}}</p>
+  <p>性别：
+  {%if student.sex%}
+  男
+  {%else%}
+  女
+  {%endif%}</p>
+  <p>年龄：{{student.age}}</p>
+  <p>生日：{{student.birth}}</p>
+  <p>邮箱：{{student.email}}</p>
+{%elif teacher%}
+  <p>姓名：{{teacher.name}}</p>
+  <p>学号：{{teacher.num}}</p>
+  <p>学院：{{teacher.college}}</p>
+  <p>性别：
+  {%if teacher.sex%}
+  男
+  {%else%}
+  女
+  {%endif%}</p>
+  <p>年龄：{{teacher.age}}</p>
+  <p>生日：{{teacher.birth}}</p>
+  <p>邮箱：{{teacher.email}}</p>
+  <p>学科：{{teacher.subject}}</p>
+  <p>电话：{{teacher.phone}}</p>
+{%else%}
+{%if studentregester%}
+<form id="form1" name="form1" method="get" action="">
+  姓名
+  <input type="text" name="name" />
+  <br/>
+  学号
+  <input type="text" name="num" />
+  <br/>
+  学院
+  <input type="text" name="college" />
+  <br/>
+  性别
+  <br/>
+  男<input type="radio" name="sex" value=True />
+  女<input type="radio" name="sex" value=False />
+  <br/>
+  年龄
+  <input type="text" name="age" />
+  <br/>
+  生日
+  <input type="text" name="birth" />(must be xxxx-xx-xx format)
+  <br/>
+  邮箱
+  <input type="text" name="email" />
+  <br/>
+{%elif teacherregester%}
+<form id="form1" name="form1" method="get" action="">
+  姓名
+  <input type="text" name="name" />
+  <br/>
+  工号
+  <input type="text" name="num" />
+  <br/>
+  学院
+  <input type="text" name="college" />
+  <br/>
+  性别
+  <br/>
+  男<input type="radio" name="sex" value=True />
+  女<input type="radio" name="sex" value=False />
+  <br/>
+  年龄
+  <input type="text" name="age" />
+  <br/>
+  生日
+  <input type="text" name="birth" />(must be xxxx-xx-xx format)
+  <br/>
+  邮箱
+  <input type="text" name="email" />
+  <br/>
+  学科
+  <input type="text" name="subject" />
+  <br/>
+  电话
+  <input type="text" name="phone" />
+  <br/>
+{%endif%}
+<input type="submit" name="submit" value="提交" />
+</form>
+<p align="left">&nbsp;</p>
+{%endif%}
+</body>
+</html>

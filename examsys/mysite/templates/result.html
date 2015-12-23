@@ -1,0 +1,17 @@
+<html>
+<head><title>结果显示测试</title></head>
+<body>
+	<p>结果列表：</p>
+	{%if exam%}
+		<p>试卷id：{{exam.id}}</p>
+		<p>试卷科目：{{exam.subject}}</p>
+		<p>试卷难度：{{exam.diffculty}}</p>
+		<p>选择题目：</p>
+	{% endif %}
+	{% for result in results %}
+		 <p>Question：{{result.Qmain}} ans:{{result.ans}}</p>
+	{% empty %}
+	<p>null question here</p>
+	{% endfor %}
+</body>
+</html> 

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>出卷</title>
+</head>
+
+<body>
+<h1 align="center">自动出题系统V1.0</h1>
+<form id="form1" name="form1" method="get" action="">
+  <label>科目
+  <select name="subject">
+    {%for subject in subjects%}
+    <option value={{subject}}>{{subject}}</option>
+    {%endfor %}
+  </select>
+  </label>
+  <label>难度
+  <select name="diffculty">
+    <option value="简单">简单</option>
+    <option value="中等">中等</option>
+    <option value="困难">困难</option>
+    </select>
+  </label>
+<input type="submit" name="addexam" value="选择题目" />
+</label>
+</form>
+<p align="left">&nbsp;</p>
+</body>
+</html>

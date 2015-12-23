@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>题目录入</title>
+</head>
+
+<body>
+<h1 align="center">自动出题系统V1.0</h1>
+<form id="form1" name="form1" method="get" action="">
+  <label>题型
+  <select name="style">
+    <option value="选择题">选择题</option>
+      </select>
+  </label>
+
+  <label>考点
+  <select name="point">
+    {%for point in points%}
+    	<option value={{point.name}}>{{point.name}}</option>
+  	{% endfor %}</option>
+    </select>
+  </label>
+  <label>难度
+  <select name="diffculty">
+    <option value="简单">简单</option>
+    <option value="中等">中等</option>
+    <option value="困难">困难</option>
+    </select>
+  </label>
+  <label></label>
+题干
+<p align="left">
+  <textarea name="Qmain" cols="100" rows="10"></textarea>
+</p>
+  答案
+  <input type="text" name="ans" />
+<label>
+<p></p>
+<input type="submit" name="submit" value="提交" />
+</label>
+</form>
+<p align="left">&nbsp;</p>
+</body>
+</html>

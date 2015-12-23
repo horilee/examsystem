@@ -1,0 +1,43 @@
+<html>
+<head><title>题目显示测试</title></head>
+<body>
+	{%if exam%}
+		<p>试卷id：{{exam.id}}</p>
+		<p>试卷科目：{{exam.subject}}</p>
+		<p>试卷难度：{{exam.diffculty}}</p>
+	{% endif %}
+	<p>题目列表：</p>
+	<form id="form1" name="form1" method="get" action="">
+		<label>科目
+  			<select name="subject">
+    		{%for subject in subjects%}
+    			<option value={{subject}}>{{subject}}</option>
+    		{%endfor %}
+  			</select>
+  		</label>
+  		<p></p>
+  		<input type="submit" name="search" value= "search"/>
+  		<p></p>
+		{% for question in questions %}
+			{%if exam%}
+			<input type="checkbox" name={{forloop.counter}} value={{question.id}}>
+			{%endif%}
+			{{question.id}} {{question.Qmain}} {{question.ans}}
+			<p></p>
+		{% empty %}
+		<p>null question here</p>
+		{% endfor %}
+		{%if exam%}
+		<input type="submit" name="submit" value="提交"/>
+		{%endif%}
+		<input type="submit" name="nextpage" value="下一页"/>
+		<p>当前是第{{pagenum}}页</p>
+		<p>跳转:</p>
+		{%for jump in jumplist%}
+			<input type="submit" name="pagejump" value= {{jump}} />
+		{%empty%}
+			<p>就这一页啦！</p>
+		{%endfor%}
+	</form>
+</body>
+</html> 
